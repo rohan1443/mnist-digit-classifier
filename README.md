@@ -11,6 +11,28 @@ Pattern Recognition assignment for classifying handwritten digits (0-9) using th
 - TEE MUN CHUN
 - ROHAN MAZUMDAR
 
+## Project Structure (Draft - Subject to Change as per team discussion)
+```
+mnist-digit-classifier/
+├── data/              # Dataset files (CSV and .mat)
+├── src/               # Source code
+├── results/           # Output results
+└── README.md
+```
+
+## Planned Pipeline Structure (Draft - Subject to Change as per team discussion)
+```
+src/
+├── load_data.m              # Load and explore MNIST dataset
+├── preprocess_data.m        # Normalize and clean data (TODO)
+├── extract_features.m       # Feature extraction: PCA, HOG, etc. (TODO)
+├── train_model.m            # Train classifiers (k-NN, SVM, etc.) (TODO)
+├── evaluate_model.m         # Performance metrics and analysis (TODO)
+└── main_pipeline.m          # Run complete workflow (TODO)
+```
+
+**Workflow:** Each script processes data and saves output for the next step.
+
 ## How to Run Locally
 
 ### Prerequisites
