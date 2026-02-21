@@ -1,0 +1,14 @@
+# MATLAB files
+*.asv
+*.m~
+
+# Data files (too large)
+*.csv
+*.mat
+
+# Mac files
+.DS_Store
+
+# Results
+*.png
+*.jpg
