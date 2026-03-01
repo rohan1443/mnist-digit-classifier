@@ -77,3 +77,35 @@ Work in progress
 ## Tech Stack
 - MATLAB
 - MNIST Dataset
+
+
+## Stages
+
+### 1. Load Data (`src/load_data.m`)
+This stage loads the MNIST dataset from CSV files and splits it into training and test sets. It also separates the labels from the image data for both sets.
+
+**Details:**
+- Loads `mnist_train.csv` and `mnist_test.csv` from `data/csv/`.
+- Each row in the CSV: first column is the digit label (0-9), remaining 784 columns are pixel values (flattened 28x28 image).
+- Splits data into:
+    - `train_images`, `train_labels`
+    - `test_images`, `test_labels`
+- Provides basic dataset information (number of samples, features, pixel value range).
+
+**Output:**
+- Variables for images and labels, ready for preprocessing.
+- Optionally saves loaded data as `.mat` file in `data/loaded/` for faster access in later stages.
+
+### 2. Preprocess Data (`src/preprocess_data.m`)
+This stage prepares the raw image data for feature extraction and model training by normalizing and mean-centering the pixel values.
+
+**Details:**
+- Loads the `.mat` file generated in the previous stage from `data/loaded/mnist_data.mat`.
+- **Normalization:** Scales pixel values from [0, 255] to [0, 1] by dividing by 255.
+- **Mean Centering:** Subtracts the mean pixel value (computed from the training set) from all images to center the data around zero.
+- Prints the new pixel value range and the size of each dataset split.
+
+**Output:**
+- Normalized and mean-centered image data for training, validation, and testing.
+- Saves preprocessed data as `.mat` file in `data/preprocessed/` for use in feature extraction and model training.
+
