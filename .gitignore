@@ -2,13 +2,12 @@
 *.asv
 *.m~
 
-# Data files (too large)
-*.csv
-*.mat
+# Data files - CSV too large for git
+data/csv/*.csv
+
+# Processed data files
+data/loaded/*.mat
+data/preprocessed/*.mat
 
 # Mac files
 .DS_Store
-
-# Results
-*.png
-*.jpg
