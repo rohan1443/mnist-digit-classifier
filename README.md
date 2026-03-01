@@ -108,4 +108,5 @@ This stage prepares the raw image data for feature extraction and model training
 **Output:**
 - Normalized and mean-centered image data for training, validation, and testing.
 - Saves preprocessed data as `.mat` file in `data/preprocessed/` for use in feature extraction and model training.
+- ![preprocess_stage_output](results/images/image.png)
 
