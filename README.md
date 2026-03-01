@@ -42,31 +42,64 @@ src/
 ### Setup Steps
 
 1. **Clone the repository**
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/mnist-digit-classifier.git
-
+```bash
+    git clone https://github.com/rohan1443/mnist-digit-classifier.git
     cd mnist-digit-classifier
-    ```
+```
 
-2. **Run in MATLAB**
+2. **Download MNIST Dataset Manually**
+   - Go to: https://www.kaggle.com/datasets/oddrationale/mnist-in-csv/data
+   - Click the **Download** button (may need to create free Kaggle account)
+   - Extract the downloaded `archive.zip` file
+   - You'll get two files:
+     - `mnist_train.csv` 
+     - `mnist_test.csv`
+
+3. **Place CSV Files in Correct Location**
+   - Copy both CSV files into the `data/csv/` folder
+   - Final structure should look like:
+```
+     mnist-digit-classifier/
+     └── data/
+         └── csv/
+             ├── mnist_train.csv  ← Place here
+             └── mnist_test.csv   ← Place here
+```
+
+4. **Verify Files are in Place**
+```bash
+    ls data/csv/
+    # Should show: mnist_train.csv  mnist_test.csv
+```
+
+5. **Run in MATLAB**
    - Open MATLAB
    - Navigate to the project root folder: `mnist-digit-classifier`
+   - Set as current directory:
+```matlab
+     cd('/<path-to>/mnist-digit-classifier')
+```
    - Run the data loading script:
-        ```matlab
-        run('src/load_data.m')
-        ```
+```matlab
+     run('src/load_data.m')
+```
 
-3. **Run in VSCode:**
+6. **Run in VSCode:**
    - Open project folder in VSCode
    - Install MATLAB extension (by MathWorks)
+   - Set project root in MATLAB Command Window:
+```matlab
+     cd('/<path-to>/mnist-digit-classifier')
+```
    - Open `src/load_data.m`
-   - Press `F5` or click the Run the PLAY button on the top-right corner
-   - Make sure your current directory in MATLAB is the project root
-   - to set project root
-        ```bash
-        cd('/<path-to>/mnist-digit-classifier')
-        ```
+   - Press `F5` or click the PLAY button on the top-right corner
+   - **Important:** Always ensure MATLAB current directory is the project root before running
 
+7. **Expected Output**
+   - Dataset statistics printed in Command Window
+   - Visualization window showing 20 sample digit images
+   - `data/mnist_data.mat` file created automatically
+   - Split info: Training (48,000), Validation (12,000), Test (10,000)
 
 ## Project Goal
 Build a machine learning system to recognize handwritten digits with high accuracy.
