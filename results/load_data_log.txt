@@ -1,0 +1,23 @@
+=== MNIST Data Loading Report ===
+Generated: 08-Mar-2026 02:48:13
+
+Dataset Statistics:
+  Training samples: 48000
+  Validation samples: 12000
+  Test samples: 10000
+  Features per image: 784
+  Image dimensions: 28x28 pixels
+  Pixel value range: [0, 255]
+  Number of classes: 10
+
+Label Distribution (Training):
+  Digit 0: 4741 samples (9.88%)
+  Digit 1: 5404 samples (11.26%)
+  Digit 2: 4768 samples (9.93%)
+  Digit 3: 4891 samples (10.19%)
+  Digit 4: 4651 samples (9.69%)
+  Digit 5: 4357 samples (9.08%)
+  Digit 6: 4744 samples (9.88%)
+  Digit 7: 5022 samples (10.46%)
+  Digit 8: 4713 samples (9.82%)
+  Digit 9: 4709 samples (9.81%)

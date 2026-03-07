@@ -1,0 +1,27 @@
+=== MNIST Preprocessing Report ===
+Generated: 08-Mar-2026 02:48:37
+
+Preprocessing Steps Applied:
+1. Min-Max Normalization: [0, 255] → [0, 1]
+2. Standardization: Zero mean, unit variance
+3. Contrast Enhancement: CLAHE (optional)
+4. Noise Reduction: Gaussian smoothing (optional)
+
+Dataset Statistics:
+  Training samples: 48000
+  Validation samples: 12000
+  Test samples: 10000
+
+Standardization Parameters:
+  Mean pixel value: 0.130653
+  Std pixel value: 0.308098
+
+Data Quality:
+  NaN values: None detected
+  Inf values: None detected
+  Standardized range: [-0.4241, 2.8217]
+
+Recommendations:
+  - Use standardized data for SVM, Neural Networks
+  - Use normalized data for k-NN, Decision Trees
+  - Consider data augmentation if overfitting occurs

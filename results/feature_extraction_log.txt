@@ -1,0 +1,41 @@
+=== Feature Extraction Report ===
+Generated: 08-Mar-2026 02:52:21
+
+Feature Sets Extracted:
+
+1. Raw Pixels
+   Dimensions: 784
+   Description: Direct normalized pixel values
+   Best for: k-NN, Neural Networks
+
+2. PCA Features
+   Dimensions: 154 (reduced from 784)
+   Variance preserved: 95.00%
+   Description: Principal component analysis
+   Best for: SVM, Neural Networks (faster training)
+
+3. HOG Features
+   Dimensions: 1296
+   Parameters: Cell=4x4, Bins=9
+   Description: Histogram of Oriented Gradients
+   Best for: SVM, Random Forest
+
+4. LBP Features
+   Dimensions: 59
+   Description: Local Binary Patterns (texture)
+   Best for: SVM, k-NN
+
+5. Statistical Features
+   Dimensions: 14
+   Description: Moments, symmetry, density
+   Best for: Ensemble methods
+
+6. Combined Features
+   Dimensions: 1369
+   Description: HOG + LBP + Statistical
+   Best for: SVM, Ensemble methods
+
+Recommendations:
+  - Use PCA for fast prototyping
+  - Use HOG for SVM classifier
+  - Use Combined features for best accuracy
