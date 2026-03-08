@@ -1,5 +1,5 @@
 === MNIST Preprocessing Report ===
-Generated: 08-Mar-2026 02:48:37
+Generated: 08-Mar-2026 17:56:46
 
 Preprocessing Steps Applied:
 1. Min-Max Normalization: [0, 255] → [0, 1]

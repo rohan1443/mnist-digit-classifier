@@ -179,18 +179,18 @@ figure('Name', 'Confusion Matrices', 'Position', [100, 100, 1600, 500]);
 
 % SVM Confusion Matrix
 subplot(1, 3, 1);
-confusionchart(test_labels, svm_predictions);
-title(sprintf('SVM\nAccuracy: %.2f%%', svm_accuracy), 'FontSize', 12);
+cm1 = confusionchart(test_labels, svm_predictions);
+cm1.Title = sprintf('SVM - Accuracy: %.2f%%', svm_accuracy);
 
 % Random Forest Confusion Matrix
 subplot(1, 3, 2);
-confusionchart(test_labels, rf_predictions);
-title(sprintf('Random Forest\nAccuracy: %.2f%%', rf_accuracy), 'FontSize', 12);
+cm2 = confusionchart(test_labels, rf_predictions);
+cm2.Title = sprintf('Random Forest - Accuracy: %.2f%%', rf_accuracy);
 
 % k-NN Confusion Matrix
 subplot(1, 3, 3);
-confusionchart(test_labels, knn_predictions);
-title(sprintf('k-NN\nAccuracy: %.2f%%', knn_accuracy), 'FontSize', 12);
+cm3 = confusionchart(test_labels, knn_predictions);
+cm3.Title = sprintf('k-NN - Accuracy: %.2f%%', knn_accuracy);
 
 sgtitle('Confusion Matrices - Test Set Performance', 'FontSize', 14, 'FontWeight', 'bold');
 

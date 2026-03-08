@@ -131,13 +131,16 @@ tic;
 % Random Forest parameters
 n_trees = 100;  % Number of trees
 min_leaf_size = 5;  % Minimum leaf size to prevent overfitting
+num_features = size(features_combined_data.train, 2);
+num_vars_to_sample = floor(sqrt(num_features));  % sqrt(features) for each split
 
 fprintf('  Training Random Forest (%d trees, this may take several minutes)...\n', n_trees);
 rf_model = TreeBagger(n_trees, features_combined_data.train, train_labels, ...
     'Method', 'classification', ...
     'MinLeafSize', min_leaf_size, ...
     'OOBPrediction', 'on', ...
-    'NumPredictorsToSample', 'sqrt');  % sqrt(features) for each split
+    'OOBPredictorImportance', 'on', ...
+    'NumVariablesToSample', num_vars_to_sample);
 
 rf_training_time = toc;
 

@@ -1,8 +1,50 @@
 === Model Training Report ===
-Generated: 08-Mar-2026 02:52:41
+Generated: 08-Mar-2026 20:03:57
 
 Dataset Sizes:
   Training: 48000 samples
   Validation: 12000 samples
   Test: 10000 samples
 
+MODEL 1: Support Vector Machine (SVM)
+  Algorithm: ECOC with RBF kernel
+  Features: HOG (1296 dimensions)
+  Training time: 174.78 seconds
+  Validation accuracy: 98.17%
+  Inference time (validation): 100.64 seconds
+
+MODEL 2: Random Forest
+  Algorithm: Bootstrap Aggregated Trees
+  Features: Combined (HOG+LBP+Statistical, 1369 dimensions)
+  Number of trees: 100
+  Training time: 5297.55 seconds
+  OOB Error: 2.07%
+  Validation accuracy: 97.91%
+  Inference time (validation): 4.90 seconds
+
+MODEL 3: k-Nearest Neighbors (k-NN)
+  Algorithm: k-NN with Euclidean distance
+  Features: Raw pixels (normalized, 784 dimensions)
+  Optimal k: 3
+  Cross-validation accuracy: 92.76%
+  Training time: 0.04 seconds
+  Validation accuracy: 97.04%
+  Inference time (validation): 136.17 seconds
+
+=== TRAINING SUMMARY ===
+
+Model Ranking (by validation accuracy):
+  1. SVM: 98.17%
+  2. Random Forest: 97.91%
+  3. k-NN: 97.04%
+
+Recommendations:
+  - Best overall accuracy: SVM
+  - Fastest training: k-NN
+  - Best balance (accuracy/speed): SVM
+  - Most robust to overfitting: Random Forest
+
+References:
+  [1] Cortes, C., & Vapnik, V. (1995). Support-vector networks.
+  [2] Breiman, L. (2001). Random forests. Machine learning.
+  [3] Cover, T., & Hart, P. (1967). Nearest neighbor pattern classification.

@@ -1,5 +1,5 @@
 === MNIST Data Loading Report ===
-Generated: 08-Mar-2026 02:48:13
+Generated: 08-Mar-2026 17:56:26
 
 Dataset Statistics:
   Training samples: 48000
