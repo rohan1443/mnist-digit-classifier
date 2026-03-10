@@ -85,7 +85,7 @@ fprintf('✓ Model training complete.\n');
 
 % Step 5: Evaluation
 fprintf('\n--- Step 5/5: Model Evaluation ---\n');
-run('src/evaluate_models.m');
+run('src/evaluate_model.m');
 fprintf('✓ Evaluation complete.\n');
 
 total_time = toc(start_time);
@@ -97,9 +97,9 @@ fprintf('===========================================\n\n');
 fprintf('Total execution time: %.1f minutes\n', total_time/60);
 fprintf('All results saved in results/ directory\n\n');
 fprintf('Key outputs:\n');
-fprintf('  • results/final_report.txt - Performance summary\n');
-fprintf('  • results/evaluation_metrics.mat - All metrics\n');
-fprintf('  • results/confusion_matrices/ - Confusion matrices\n\n');
+fprintf('  * results/evaluate_model/final_report.txt - Performance summary\n');
+fprintf('  * results/evaluate_model/evaluation_metrics.mat - All metrics\n');
+fprintf('  * results/evaluate_model/confusion_matrices/ - Confusion matrices\n\n');
 end
 
 %% ========================================
@@ -134,7 +134,7 @@ switch step
         run('src/train_models.m');
     case 5
         fprintf('Running: Evaluate Models\n');
-        run('src/evaluate_models.m');
+        run('src/evaluate_model.m');
     case 0
         fprintf('Returning...\n');
         return;
