@@ -199,7 +199,7 @@ Five feature representations were implemented and compared systematically:
 - Proven effective for object recognition tasks
 - Standard feature descriptor in computer vision
 
-**✅ WHY SELECTED AS BEST:**
+**WHY SELECTED AS BEST:**
 - **Highest test accuracy** across all feature sets
 - **Most discriminative for handwritten digits** - edge orientations distinguish '3' from '8', '6' from '9', etc.
 - Captures structural patterns (loops, curves, endpoints) critical for digit classification
@@ -273,7 +273,7 @@ Five feature representations were implemented and compared systematically:
 | **Raw Pixels** | 784 | 100% | Baseline reference | High dimensionality, no invariance |
 | **PCA-50** | 50 | ~85-90% | Fast, compact | Loses edge details |
 | **PCA-100** | 100 | ~95-97% | More detailed PCA | Still below HOG accuracy |
-| **HOG** ✅ | ~441 | N/A | Shape-discriminative | **SELECTED - Best accuracy** |
+| **HOG** | ~441 | N/A | Shape-discriminative | **SELECTED - Best accuracy** |
 | **Hybrid** | 50 | ~90% HOG variance | Innovation, compact | Loses HOG edge info |
 
 **Conclusion:** HOG features selected as best because handwritten digits are fundamentally shape-based, and edge orientation histograms capture the structural patterns (curves, strokes, endpoints) that distinguish digit classes most effectively.
@@ -324,7 +324,7 @@ Three model families were trained on each of the five feature sets, creating 15 
 - Handles non-linearly separable data with kernels
 - Industry-standard for image classification tasks
 
-**✅ WHY SELECTED AS BEST (with HOG features):**
+** WHY SELECTED AS BEST (with HOG features):**
 - **Highest test accuracy** (~97-98%) across all 15 combinations
 - **Best per-digit balance** - consistent precision/recall across all digits 0-9
 - **Robust decision boundaries** - maximizing margin improves generalization
@@ -411,7 +411,7 @@ Three model families were trained on each of the five feature sets, creating 15 
 | Model | Training Speed | Prediction Speed | Accuracy Range | Why Included | Why Not Best |
 |-------|---------------|------------------|----------------|--------------|--------------|
 | **k-NN** | Instant | Slow | ~95-96% | Simple baseline | Slow, lower accuracy |
-| **SVM** ✅ | Medium | Fast | ~97-98% | Strong theory, high-dim | **SELECTED - Highest accuracy** |
+| **SVM**  | Medium | Fast | ~97-98% | Strong theory, high-dim | **SELECTED - Highest accuracy** |
 | **Random Forest** | Slow | Medium | ~96-97% | Robust ensemble | Slightly below SVM |
 
 **Not Implemented:**
@@ -431,7 +431,7 @@ Three model families were trained on each of the five feature sets, creating 15 
 | Raw Pixels | ~95% | ~96% | ~95% |
 | PCA-50 | ~96% | ~97% | ~96% |
 | PCA-100 | ~96% | ~97% | ~97% |
-| **HOG** | ~96% | **~98%** ✅ | ~97% |
+| **HOG** | ~96% | **~98%** | ~97% |
 | Hybrid (HOG+PCA) | ~96% | ~97% | ~97% |
 
 **Winner:** SVM + HOG (highlighted) - best combination across all 15 experiments.
@@ -539,9 +539,9 @@ results/**/*.txt
 ---
 
 ## Status
-✅ Pipeline implemented and tested  
-✅ Documentation structured for submission  
-✅ Best model identified: **SVM + HOG**  
-✅ GUI demo functional  
+- Pipeline implemented and tested  
+- Documentation structured for submission  
+- Best model identified: **SVM + HOG**  
+- GUI demo functional  
 
 **Final recommendation:** SVM with HOG features provides the best combination of accuracy (~97-98%), interpretability, and computational efficiency for MNIST digit recognition in this assignment context.
