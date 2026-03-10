@@ -1,13 +1,33 @@
-# MATLAB files
+# MATLAB temp files
 *.asv
 *.m~
 
-# Data files - CSV too large for git
+# OS artifacts
+.DS_Store
+
+# Raw datasets (keep local)
 data/csv/*.csv
 
-# Processed data files
-data/loaded/*.mat
-data/preprocessed/*.mat
+# Generated binary artifacts
+*.mat
 
-# Mac files
-.DS_Store
+# Generated reports/plots
+results/**/*.png
+results/**/*.txt
+
+# Keep generated-output folders but ignore their contents
+results/models/*
+!results/models/.gitkeep
+results/evaluate_model/*
+!results/evaluate_model/.gitkeep
+!results/evaluate_model/confusion_matrices/
+results/evaluate_model/confusion_matrices/*
+!results/evaluate_model/confusion_matrices/.gitkeep
+
+# Intermediate data outputs
+data/feature-extracted/*
+!data/feature-extracted/.gitkeep
+data/loaded/*
+!data/loaded/.gitkeep
+data/preprocessed/*
+!data/preprocessed/.gitkeep

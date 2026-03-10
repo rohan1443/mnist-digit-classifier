@@ -101,10 +101,31 @@ end
 
 fprintf('\n Saving the preprocessed data to a new .mat file for use in the next stage \n');
 
+% save(fullfile(rootDir, 'data', 'preprocessed', 'mnist_preprocessed.mat'), ... % the file locaiton is the preprocessed folder inside the data folder
+%     'train_images_centered', 'train_labels', ...
+%     'val_images_centered', 'val_labels', ...
+%     'test_images_centered', 'test_labels', '-v7')
+
+
+% Why save the normalized data instead of the centered data?
+% Normalized data is more universally useful for a wider range of models and feature extraction techniques, 
+% while centered data is specifically beneficial for certain models like neural networks and PCA. 
+% By saving the normalized data we ensure that we have a more versatile dataset for future use, 
+% while still retaining the option to perform mean centering later if needed for specific models or techniques.
+% k-NN, SVM, Random Forest work better with [0,1] range
+% PCA can use either, but normalized is safer
+% HOG expects [0,1] normalized images
+
+% Centered is mainly for:
+% Neural networks
+% When PCA explicitly needs zero-mean
+
+
 save(fullfile(rootDir, 'data', 'preprocessed', 'mnist_preprocessed.mat'), ... % the file locaiton is the preprocessed folder inside the data folder
-    'train_images_centered', 'train_labels', ...
-    'val_images_centered', 'val_labels', ...
-    'test_images_centered', 'test_labels', '-v7')
+    'train_images_norm', 'train_labels', ...
+    'val_images_norm', 'val_labels', ...
+    'test_images_norm', 'test_labels', '-v7')
+
 
 fprintf('Preprocessed data saved successfully to mnist_preprocessed.mat\n');
 
