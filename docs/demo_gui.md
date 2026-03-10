@@ -24,8 +24,3 @@ This is the presentation layer. It gives a simple user interface to test digit r
 ## Notes
 - GUI expects model artifacts to already exist.
 - So run training and evaluation first.
-
-## Good Demo Practice
-- Test with clear handwritten digits first.
-- Mention that confidence for some model types is approximate in current implementation.
-- Explain that the backend model is selected from evaluation stage automatically.

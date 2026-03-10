@@ -16,6 +16,7 @@ The goal is simple: make it easy for any team member, lecturer, or examiner to u
 5. `train_models.md`
 6. `evaluate_model.md`
 7. `demo_gui.md`
+8. `demo_walkthrough_gui.md`
 
 ## End-to-End Flow in One View
 1. Load CSV data and split train/validation/test.
@@ -34,5 +35,6 @@ Always run MATLAB from project root so paths like `data/...` and `results/...` w
 	- test accuracy comparison chart
 	- per-digit performance chart
 	- best model confusion matrix
+- `demo_walkthrough_gui.md` includes a 3-step GUI walkthrough.
 
 These images are stored as tracked files under `docs/assets/` so they are visible directly on GitHub.
