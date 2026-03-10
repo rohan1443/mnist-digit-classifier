@@ -31,3 +31,5 @@ data/loaded/*
 !data/loaded/.gitkeep
 data/preprocessed/*
 !data/preprocessed/.gitkeep
+
+readme_try.md
