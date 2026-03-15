@@ -38,6 +38,9 @@ mnist-digit-classifier/
 │   ├── extract_features.m      # Multi-method feature extraction
 │   ├── train_model.m           # Train SVM, RF, and k-NN models
 │   ├── evaluate_model.m        # Comprehensive model evaluation
+│   ├── demo_app.m              # Upload-image demo UI (uses saved models)
+│   ├── demo_predict_digit.m    # CLI helper for one-image prediction
+│   ├── prepare_demo_assets.m   # Generates *.jpg/*.gif/*.png test files
 │   └── main_pipeline.m         # Complete workflow orchestrator
 ├── models/                     # Trained model files (.mat)
 ├── results/                    # Logs, plots, and analysis
@@ -180,6 +183,32 @@ run('src/evaluate_model.m')
 4. Use Command Palette (`Ctrl+Shift+P`):
    - `MATLAB: Change Current Folder` → Select project root
    - `MATLAB: Run File` or press `F5`
+
+### Option 4: Run Local Upload Demo (No Retraining)
+
+If models already exist in `models/`, run only the demo:
+
+```matlab
+cd('path/to/mnist-digit-classifier')
+run('src/demo_app.m')
+```
+
+The app allows users to upload handwritten digit images and returns:
+- Predicted digit by each model (SVM, Random Forest, k-NN)
+- Confidence score (%) for each model
+- Processed 28x28 digit preview used for inference
+
+Optional CLI mode:
+
+```matlab
+result = demo_predict_digit('demo/test_images/digit_7_01.png');
+```
+
+Generate submission test images in multiple formats:
+
+```matlab
+prepare_demo_assets();
+```
 
 ## 📈 Expected Results
 

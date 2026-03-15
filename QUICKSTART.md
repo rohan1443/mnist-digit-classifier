@@ -199,6 +199,46 @@ run('src/evaluate_model.m')
 
 **Important:** Run stages in order! Each stage depends on the previous one.
 
+## 🖼️ Local Demo Application (No Retraining Needed)
+
+Use this when you already have trained models in `models/` and want a live upload demo.
+
+### 1) Launch the interactive demo UI
+
+```matlab
+cd('C:\Users\Hannah\Documents\GitHub\mnist-digit-classifier')
+run('src/demo_app.m')
+```
+
+### 2) Demo flow
+
+1. Click **Upload Digit Image**.
+2. Select any handwritten digit image (`.png`, `.jpg`, `.jpeg`, `.bmp`, `.gif`, `.tif`).
+3. The app will show:
+   - Uploaded image
+   - Processed MNIST-style 28x28 image
+   - Prediction and confidence for each model (SVM, Random Forest, k-NN)
+
+### 3) Command-line prediction (optional)
+
+```matlab
+result = demo_predict_digit('demo/test_images/digit_7_01.png')
+```
+
+### 4) Generate submission test images (`*.jpg`, `*.gif`, `*.png`)
+
+```matlab
+prepare_demo_assets();    % default: 3 samples per digit
+```
+
+Generated files:
+- `demo/test_images/*.png`
+- `demo/test_images/*.jpg`
+- `demo/test_images/*.gif`
+- `demo/test_images/manifest.csv`
+
+This satisfies the requirement to provide test files in image formats.
+
 ## 🐛 Common Issues & Solutions
 
 ### Issue 1: "File not found" Error
