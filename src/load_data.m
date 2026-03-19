@@ -16,13 +16,13 @@ fprintf('Loading MNIST dataset...\n');
 
 % Read training data from CSV
 % Always run the code from the root directory of the project mnist-digit-classifier to avoid path issues
-% rootDir = pwd;
-% train_data = readmatrix(fullfile(rootDir, 'data', 'csv', 'mnist_train.csv'));
-% test_data  = readmatrix(fullfile(rootDir, 'data', 'csv', 'mnist_test.csv'));
-
-rootDir = fileparts(pwd);  % go to project root
+rootDir = pwd;
 train_data = readmatrix(fullfile(rootDir, 'data', 'csv', 'mnist_train.csv'));
 test_data  = readmatrix(fullfile(rootDir, 'data', 'csv', 'mnist_test.csv'));
+
+% rootDir = fileparts(pwd);  % go to project root
+% train_data = readmatrix(fullfile(rootDir, 'data', 'csv', 'mnist_train.csv'));
+% test_data  = readmatrix(fullfile(rootDir, 'data', 'csv', 'mnist_test.csv'));
 
 fprintf('Files loaded successfully!\n\n');
 
